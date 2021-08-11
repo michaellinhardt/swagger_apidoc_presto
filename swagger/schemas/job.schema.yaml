@@ -1,0 +1,59 @@
+# DATA
+job-post:
+  type: object
+  properties:
+    skill_uuid:
+      type: string
+      format: uuid
+    pictures:
+      type: array
+      items:
+       $ref: '#/components/schemas/picture'
+    description:
+      type: string
+
+job:
+  type: object
+  properties:
+    job_uuid:
+      type: string
+      format: uuid
+    user_uuid:
+      type: string
+      format: uuid
+    magician_uuid:
+      type: string
+      format: uuid
+    skill_uuid:
+      type: string
+      format: uuid
+    description:
+      type: string
+    pictures:
+      $ref: '#/components/schemas/pictures-job'
+    description:
+      type: string
+
+# HEADER
+job-header:
+  type: object
+  properties:
+    job:
+      $ref: '#/components/schemas/job'
+
+# HEADER
+job-post-header:
+  type: object
+  properties:
+    job:
+      $ref: '#/components/schemas/job-post'
+
+# API REQUEST
+request.post.job:
+      $ref: '#/components/schemas/job-post-header'
+
+# API RESPONSE
+response.post.job.201:
+  $ref: '#/components/schemas/user-composition'
+response.delete.job.200:
+  $ref: '#/components/schemas/user-composition'

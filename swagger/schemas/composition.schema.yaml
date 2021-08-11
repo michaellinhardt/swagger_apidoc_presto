@@ -1,0 +1,58 @@
+# GLOBAL
+uuid-item:
+  type: string
+  format: uuid
+
+uuid-array:
+  type: array
+  items:
+    type: string
+    format: uuid
+
+# USER COMPOSITION
+user-composition:
+  type: object
+  properties:
+    user:
+      $ref: '#/components/schemas/user'
+    profile:
+      $ref: '#/components/schemas/profile'
+    credentials:
+      $ref: '#/components/schemas/credentials-array'
+    otp:
+      $ref: '#/components/schemas/otp-array'
+    skills:
+      $ref: '#/components/schemas/skills'
+    addresses:
+      $ref: '#/components/schemas/addresses-array'
+    job:
+      $ref: '#/components/schemas/job'
+
+user-login-composition:
+  type: object
+  properties:
+    jwtoken:
+      $ref: '#/components/schemas/jwtoken'
+    user:
+      $ref: '#/components/schemas/user'
+    profile:
+      $ref: '#/components/schemas/profile'
+    credentials:
+      $ref: '#/components/schemas/credentials-array'
+    otp:
+      $ref: '#/components/schemas/otp-array'
+    skills:
+      $ref: '#/components/schemas/skills'
+    addresses:
+      $ref: '#/components/schemas/addresses-array'
+    job:
+      $ref: '#/components/schemas/job'
+
+# CREDENTIALS COMPOSITION
+credentials-composition:
+  type: object
+  properties:
+    credentials:
+      $ref: '#/components/schemas/credentials'
+    password:
+      $ref: '#/components/schemas/password'

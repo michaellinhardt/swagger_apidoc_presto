@@ -1,0 +1,67 @@
+/user:
+
+  get:
+    tags:
+      - user
+    summary: Get user data related to json web token
+
+    responses:
+      '200':
+        description: successful operation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/response.get.user.200'
+
+  post:
+    tags:
+      - user
+    summary: Create user magician or tasker
+
+    requestBody:
+      description: Created user object
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/request.post.user'
+
+    responses:
+      '201':
+        description: successful operation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/response.post.user.201'
+
+/user/login:
+
+  post:
+    tags:
+      - user
+    summary: Login user
+
+    requestBody:
+      description: User credential and password
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/request.post.user.login'
+
+    responses:
+      '201':
+        description: successful operation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/response.post.user.login.201'
+
+/user/logout:
+
+  get:
+    tags:
+      - user
+    summary: Logout user
+
+    responses:
+      '200':
+        description: successful operation

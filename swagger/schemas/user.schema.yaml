@@ -1,0 +1,41 @@
+# DATA
+user:
+  type: object
+  properties:
+    uuid:
+      type: string
+      format: uuid
+
+# API REQUEST USER
+request.post.user:
+  type: object
+  properties:
+    profile:
+      type: object
+      properties:
+        isMagician:
+          type: boolean
+
+# API REQUEST USER / LOGIN
+request.post.user.login:
+  type: object
+  properties:
+    login:
+      type: object
+      properties:
+        login:
+          type: string
+        password:
+          type: string
+
+
+# API RESPONSE USER
+response.get.user.200:
+  $ref: '#/components/schemas/user-composition'
+
+response.post.user.201:
+  $ref: '#/components/schemas/user-composition'
+
+# API RESPONSE USER / LOGIN
+response.post.user.login.201:
+  $ref: '#/components/schemas/user-login-composition'

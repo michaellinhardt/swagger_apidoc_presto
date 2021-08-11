@@ -1,0 +1,34 @@
+/job:
+
+  post:
+    tags:
+      - job
+    summary: Post a job and get an uuid
+
+    requestBody:
+      description: The job data
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/request.post.job'
+
+    responses:
+      '201':
+        description: successful operation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/response.post.job.201'
+
+  delete:
+    tags:
+      - job
+    summary: Cancel a job
+
+    responses:
+      '201':
+        description: successful operation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/response.delete.job.200'
